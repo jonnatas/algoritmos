@@ -1,0 +1,5 @@
+gcc do.c
+./a.out < in.txt
+./a.out < in.txt > resp.txt
+diff resp.txt out.txt
+

@@ -4,6 +4,15 @@
 *.o
 *.obj
 
+*.cpp.swp
+*.cpp.swo
+*in.txt
+*out.txt
+*/a.out
+*/in.txt
+*/out.txt
+*/myout.txt
+
 # Precompiled Headers
 *.gch
 *.pch

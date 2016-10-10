@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+#define EPS 1e-9
+#define PI acos(-1)
+
+using namespace std;
+using point = pair<double, double>;
+
+bool equals(double a, double b)
+{
+	return fabs(a - b) < EPS;
+}
+bool operator==(const point& a, const point& b)
+{
+	return equals(a.first, b.first) && equals(a.second, b.second);
+}
+// D = 0: R pertence a reta PQ
+// D > 0: R à esquerda da reta PQ
+// D < 0: R à direita da reta PQ
+double D(const point& P, const point& Q, const point& R)
+{
+	return (P.first * Q.second + P.second * R.first + Q.first * R.second) - (R.first * Q.second + R.second * P.first + Q.first * P.second);
+}
+
+class Triangle {
+	public:
+		point A,B,C;
+		double a, b, c;
+		Triangle(const point& P,const point& Q, const point& R) : A(P), B(Q), C(R) {}
+		Triangle(double av ,double bv, double cv) : a(av), b(bv), c(cv) {}
+};
+
+int main(){
+	double x1,y1, x2,y2, x3,y3;
+	while(scanf("%lf %lf %lf %lf %lf %lf\n", &x1, &y1, &x2, &y2, &x3, &y3) != EOF)
+	{
+		if( equals(x1+y1+x2+y2+x3+y3, 0.0) )
+			break;
+
+		Triangle T(point(x1,y1), point(x2,y2), point(x3,y3));
+
+	}
+
+	return 0;
+}
+
+
+ 
+//printf("%lf %lf %lf -- %lf %lf %lf\n",T.A.first, T.A.second,T.B.first, T.B.second,T.C.first, T.C.second );
